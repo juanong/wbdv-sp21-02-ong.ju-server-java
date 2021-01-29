@@ -1,0 +1,24 @@
+i {
+    margin-right: 10px;
+}
+
+.title-column {
+    width: 50%;
+}
+
+.owned-column {
+    width: 15%;
+}
+
+.modified-column {
+    width: 20%;
+}
+
+.delete-column {
+    width: 15%;
+}
+
+.below-nav {
+    padding-top: 70px;
+    padding-bottom: 15px;
+}

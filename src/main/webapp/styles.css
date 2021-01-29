@@ -1,7 +1,34 @@
-.color-red {
-    color:green;
+.background-gray {
+    background-color:lightgray;
+}
+
+.page-header {
+    background-color: royalblue;
+    padding: 10px;
+    color: white;
 }
 
 .jo-sticky-nav-bar {
-    background-color: yellow;
+    background-color: royalblue;
+    padding: 10px;
+    color: white;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    position: fixed;
+}
+
+.jo-header {
+    background-color: lightgray;
+    z-index: 1;
+}
+
+.move-up {
+    margin-top: -26.5px;
+}
+
+.jo-invisible {
+    visibility: hidden;
 }
