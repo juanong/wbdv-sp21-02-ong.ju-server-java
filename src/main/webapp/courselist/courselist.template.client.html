@@ -11,11 +11,13 @@
 <body>
 
 <div class="row jo-sticky-nav-bar">
-    <div class="col-sm-2">
+    <div class="col-sm-2 d-none d-sm-block">
         <h5><i class="fas fa-bars"></i>
             Course Manager
         </h5>
     </div>
+    <!-- Only the icon will appear in the nav bar on extra small screens -->
+
     <div class="col-7">
         <input type="text"
                class="form-control"
@@ -26,21 +28,40 @@
     </div>
 </div>
 
+<!--
 <div class="row jo-header below-nav shadow-sm">
     <div class="col-sm-4 text-center font-weight-bold">Title</div>
     <div class="col-sm-3 text-right font-weight-bold">Owned by</div>
     <div class="col-sm-3 text-left font-weight-bold">Last modified by me</div>
 </div>
 
-<div class="container move-up">
+
+Trying to make gray nav as a table
+<div class="background-gray d-none d-sm-block move-up">
+    <div class="container below-nav">
+        <table class="table">
+            <thead>
+            <tr>
+                <td class="title-column"><b>Title</b></td>
+                <td class="owned-column"><b>Owned by</b></td>
+                <td class="modified-column"><b>Last modified by me</b></td>
+                <td class="delete-column"></td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+-->
+<div class="container below-nav">
     <table class="table">
 
         <!-- intentionally leaving the header hidden so columns are a fixed width -->
-        <thead class="jo-invisible">
+
+        <thead>
         <tr>
-            <th class="title-column"></th>
-            <th class="owned-column"></th>
-            <th class="modified-column"></th>
+            <th class="title-column">Title</th>
+            <th class="owned-column d-none d-sm-table-cell">Owned by</th>
+            <th class="modified-column d-none d-sm-table-cell">Last modified by</th>
             <th class="delete-column"></th>
         </tr>
         </thead>
@@ -53,8 +74,8 @@
                 </a>
                 CS5001 Foundations of Computer Science
             </td>
-            <td>Laney Strange</td>
-            <td>April 15, 2020</td>
+            <td class="d-none d-sm-table-cell">Laney Strange</td>
+            <td class="d-none d-sm-table-cell">April 15, 2020</td>
             <td><i class="fas fa-trash"></i></td>
         </tr>
         <tr>
@@ -64,8 +85,8 @@
                 </a>
                 CS5002 Discrete and Data Structures
             </td>
-            <td>Ghita Amor</td>
-            <td>April 20, 2020</td>
+            <td class="d-none d-sm-table-cell">Ghita Amor</td>
+            <td class="d-none d-sm-table-cell">April 20, 2020</td>
             <td><i class="fas fa-trash"></i></td>
         </tr>
         <tr>
@@ -75,8 +96,8 @@
                 </a>
                 CS5004 Object-Oriented Design
             </td>
-            <td>Vidoje</td>
-            <td>August 20, 2020</td>
+            <td class="d-none d-sm-table-cell">Vidoje</td>
+            <td class="d-none d-sm-table-cell">August 20, 2020</td>
             <td><i class="fas fa-trash"></i></td>
         </tr>
         </tbody>
@@ -84,13 +105,12 @@
 
     <table class="table">
 
-        <!-- intentionally leaving the header hidden so columns are a fixed width -->
         <thead>
         <tr>
-            <th class="title-column">Yesterday</th>
-            <th class="owned-column"></th>
-            <th class="modified-column"></th>
-            <th class="delete-column"></th>
+            <th scope="col" class="title-column">Yesterday</th>
+            <th scope="col" class="owned-column d-none d-sm-table-cell"></th>
+            <th scope="col" class="modified-column d-none d-sm-table-cell"></th>
+            <th scope="col" class="delete-column"></th>
         </tr>
         </thead>
 
@@ -100,10 +120,10 @@
                 <a href="#">
                     <i class="fas fa-file-alt"></i>
                 </a>
-                CS5006 CS5800 Algorithms
+                CS5800 Algorithms
             </td>
-            <td>Drew VDP</td>
-            <td>December 9, 2020</td>
+            <td class="d-none d-sm-table-cell">Drew VDP</td>
+            <td class="d-none d-sm-table-cell">December 9, 2020</td>
             <td><i class="fas fa-trash"></i></td>
         </tr>
         <tr>
@@ -113,8 +133,8 @@
                 </a>
                 CS5100 Foundations of AI
             </td>
-            <td>Rob Platt</td>
-            <td>December 18, 2020</td>
+            <td class="d-none d-sm-table-cell">Rob Platt</td>
+            <td class="d-none d-sm-table-cell">December 18, 2020</td>
             <td><i class="fas fa-trash"></i></td>
         </tr>
         </tbody>
@@ -126,8 +146,8 @@
         <thead>
         <tr>
             <th class="title-column">Last 7 Days</th>
-            <th class="owned-column"></th>
-            <th class="modified-column"></th>
+            <th class="owned-column d-none d-sm-table-cell"></th>
+            <th class="modified-column d-none d-sm-table-cell"></th>
             <th class="delete-column"></th>
         </tr>
         </thead>
@@ -140,8 +160,8 @@
                 </a>
                 CS5001 Foundations of Computer Science
             </td>
-            <td>Laney Strange</td>
-            <td>April 15, 2020</td>
+            <td class="d-none d-sm-table-cell">Laney Strange</td>
+            <td class="d-none d-sm-table-cell">April 15, 2020</td>
             <td><i class="fas fa-trash"></i></td>
         </tr>
         <tr>
@@ -151,8 +171,8 @@
                 </a>
                 CS5002 Discrete and Data Structures
             </td>
-            <td>Ghita Amor</td>
-            <td>April 20, 2020</td>
+            <td class="d-none d-sm-table-cell">Ghita Amor</td>
+            <td class="d-none d-sm-table-cell">April 20, 2020</td>
             <td><i class="fas fa-trash"></i></td>
         </tr>
         <tr>
@@ -162,8 +182,8 @@
                 </a>
                 CS5004 Object-Oriented Design
             </td>
-            <td>Vidoje</td>
-            <td>August 20, 2020</td>
+            <td class="d-none d-sm-table-cell">Vidoje</td>
+            <td class="d-none d-sm-table-cell">August 20, 2020</td>
             <td><i class="fas fa-trash"></i></td>
         </tr>
         </tbody>

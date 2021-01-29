@@ -1,96 +1,149 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Course Editor</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="../styles.css" rel="stylesheet"/>
+    <link href="courseeditor.style.client.css" rel="stylesheet"/>
+    <title>Course Editor</title>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-4">
-            <div class="row ">
-                <div class="col-2">
-                    <i class="fas fa-times align-bottom"></i>
-                </div>
-                <div class="col-10">
-                    <h3>Course Editor</h3>
-                </div>
+
+<div class="row bg-secondary jo-editor-header-padding shadow">
+    <div class="col-sm-4">
+        <ul class="list-inline">
+            <li class="list-inline-item jo-x-right-padding jo-color-light-gray"><i class="fas fa-times fa-lg"></i></li>
+            <li class="list-inline-item jo-color-white"><h5>CS5610 - WebDev</h5></li>
+        </ul>
+    </div>
+    <div class="col-sm-8">
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="jo-color-light-gray" href="../index.html"><h5>Build</h5></a>
+            </li>
+            <li class="nav-item">
+                <a class="jo-color-light-gray"><h5>Pages</h5></a>
+            </li>
+            <li class="nav-item">
+                <a class="jo-color-light-gray"><h5>Theme</h5></a>
+            </li>
+            <li class="nav-item">
+                <a class="jo-color-light-gray"><h5>Store</h5></a>
+            </li>
+            <li class="nav-item">
+                <a class="jo-color-light-gray"><h5>App</h5></a>
+            </li>
+            <li class="nav-item">
+                <a class="jo-color-light-gray"><h5>Settings</h5></a>
+            </li>
+            <li class="nav-item">
+                <a class="jo-color-white"><i class="fas fa-plus"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4 bg-dark">
+        <br>
+        <div class="jo-left-panel-padding">
+            <div class="container text-center">
+                <button type="button"
+                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                    Module 1 - jQuery
+                    <i class="fas fa-times float-right"></i>
+                </button>
             </div>
         </div>
-        <div class="col-8">
-                <ul class="nav nav-tabs nav-fill">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Build</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Pages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Theme</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Store</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">App</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-plus"></i></a>
-                    </li>
-                </ul>
+        <div class="jo-left-panel-padding">
+            <div class="container text-right">
+                <button type="button"
+                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                    Module 2 - React
+                    <i class="fas fa-times float-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="jo-left-panel-padding">
+            <div class="container text-right">
+                <button type="button"
+                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                    Module 3 - Redux
+                    <i class="fas fa-times float-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="jo-left-panel-padding">
+            <div class="container text-right">
+                <button type="button"
+                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                    Module 4 - Native
+                    <i class="fas fa-times float-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="jo-left-panel-padding">
+            <div class="container text-right">
+                <button type="button"
+                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                    Module 5 - Angular
+                    <i class="fas fa-times float-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="jo-left-panel-padding">
+            <div class="container text-right">
+                <button type="button"
+                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                    Module 6 - Node
+                    <i class="fas fa-times float-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="jo-left-panel-padding">
+            <div class="container text-right">
+                <button type="button"
+                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                    Module 7 - Mongo
+                    <i class="fas fa-times float-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="jo-color-white jo-left-panel-padding">
+            <a href="#"><i class="fas fa-plus float-right fa-lg"></i></a>
+            <br>
+            <br>
         </div>
     </div>
-    <br>
-    <div class="row">
-        <div class="col-4">
-            <ul class="nav nav-tabs flex-column">
-                <li>
-                    <a href="#" class="nav-link bg-secondary text-white active">Module 1-jQuery</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link bg-secondary text-white active">Module 2-React</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link bg-secondary text-white active">Module 3-Redux</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link bg-secondary text-white active">Module 4-Native</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link bg-secondary text-white active">Module 5-Angular</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link bg-secondary text-white active">Module 6-Node</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link bg-secondary text-white active">Module 7-Mongo</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-8">
-            <div class="container">
-                <ul class="nav nav-pills nav-fill">
-                    <li class="nav-item">
-                        <a class="nav-link active">Topic 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Topic 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Topic 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Topic 4</a>
-                    </li>
-                </ul>
-                <br>
-                Content left blank
+    <div class="col-sm-8">
+        <div class="container">
+            <div class="row">
+                <div class="jo-topics-spacing">
+                    <div class="background-gray jo-topics-format">
+                        <h5>Topic 1</h5>
+                    </div>
+                </div>
+                <div class="jo-topics-spacing">
+                    <div class="background-gray jo-topics-format">
+                        <h5>Topic 2</h5>
+                    </div>
+                </div>
+                <div class="jo-topics-spacing">
+                    <div class="background-gray jo-topics-format">
+                        <h5>Topic 3</h5>
+                    </div>
+                </div>
+                <div class="jo-topics-spacing">
+                    <div class="background-gray jo-topics-format">
+                        <a href="#"><h5>Topic 4</h5></a>
+                    </div>
+                </div>
+                <div class="jo-topics-spacing">
+                    <div class="background-gray jo-topics-plus-format">
+                        <h5><i class="fas fa-plus"></i></h5>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

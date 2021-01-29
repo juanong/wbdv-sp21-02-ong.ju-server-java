@@ -1,0 +1,35 @@
+.jo-editor-header-padding{
+    padding-left:20px;
+    padding-top:22px;
+    padding-right:20px;
+}
+
+.jo-x-right-padding {
+    padding-right:15px;
+}
+
+.jo-left-panel-padding {
+    padding-top: 15px;
+    padding-bottom:10px;
+    padding-left: 10px;
+}
+
+.jo-topics-format {
+    padding-top: 5px;
+    padding-bottom: 1px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.jo-topics-spacing {
+    padding-top:20px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.jo-topics-plus-format {
+    padding-top:5px;
+    padding-bottom:1px;
+    padding-left:10px;
+    padding-right:10px;
+}
