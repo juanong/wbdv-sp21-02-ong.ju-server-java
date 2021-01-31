@@ -10,19 +10,21 @@
 </head>
 <body>
 
+<!-- This nav bar will stay present on the screen as the user scrolls down -->
 <div class="row jo-sticky-nav-bar">
     <div class="col-sm-2 d-none d-sm-block">
+        <!-- Put the icon and Course Manager title in the same line -->
         <h5><i class="fas fa-bars"></i>
             Course Manager
         </h5>
     </div>
     <!-- Only the icon will appear in the nav bar on extra small screens -->
-
     <div class="col-7">
         <input type="text"
                class="form-control"
                placeholder="New Course Title"/>
     </div>
+    <!-- Add the plus icon -->
     <div class="col-3">
         <i class="fas fa-plus-circle fa-2x"></i>
     </div>
@@ -52,31 +54,48 @@ Trying to make gray nav as a table
     </div>
 </div>
 -->
+<!-- For aesthetic purposes, this section is moved up a few pixels behind the nav bar -->
 <div class="container below-nav">
     <table class="table">
-
-        <!-- intentionally leaving the header hidden so columns are a fixed width -->
-
+        <!-- These columns are a fixed width for consistency -->
         <thead>
         <tr>
-            <th class="title-column">Title</th>
-            <th class="owned-column d-none d-sm-table-cell">Owned by</th>
-            <th class="modified-column d-none d-sm-table-cell">Last modified by</th>
+            <th class="title-column">
+                Title
+            </th>
+            <!-- The next two columns will collapse on an extra small screen -->
+            <th class="owned-column
+                       d-none
+                       d-sm-table-cell">
+                Owned by
+            </th>
+            <th class="modified-column
+                       d-none
+                       d-sm-table-cell">
+                Last modified by
+            </th>
             <th class="delete-column"></th>
         </tr>
         </thead>
 
+        <!-- Just filling the table with my previous classes -->
         <tbody class="shadow-sm">
         <tr>
             <td>
-                <a href="#">
+                <a href="../courseeditor/courseeditor.template.client.html">
                 <i class="fas fa-file-alt"></i>
                 </a>
                 CS5001 Foundations of Computer Science
             </td>
             <td class="d-none d-sm-table-cell">Laney Strange</td>
             <td class="d-none d-sm-table-cell">April 15, 2020</td>
-            <td><i class="fas fa-trash"></i></td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-trash">
+
+                    </i>
+                </a>
+            </td>
         </tr>
         <tr>
             <td>
@@ -87,7 +106,13 @@ Trying to make gray nav as a table
             </td>
             <td class="d-none d-sm-table-cell">Ghita Amor</td>
             <td class="d-none d-sm-table-cell">April 20, 2020</td>
-            <td><i class="fas fa-trash"></i></td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-trash">
+
+                    </i>
+                </a>
+            </td>
         </tr>
         <tr>
             <td>
@@ -98,22 +123,41 @@ Trying to make gray nav as a table
             </td>
             <td class="d-none d-sm-table-cell">Vidoje</td>
             <td class="d-none d-sm-table-cell">August 20, 2020</td>
-            <td><i class="fas fa-trash"></i></td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-trash">
+
+                    </i>
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
 
+    <!-- Making another table of the same format -->
     <table class="table">
-
         <thead>
         <tr>
-            <th scope="col" class="title-column">Yesterday</th>
-            <th scope="col" class="owned-column d-none d-sm-table-cell"></th>
-            <th scope="col" class="modified-column d-none d-sm-table-cell"></th>
-            <th scope="col" class="delete-column"></th>
+            <!-- Treating the header as just a title - leaving column names blank -->
+            <th scope="col"
+                class="title-column">
+                Yesterday
+            </th>
+            <th scope="col"
+                class="owned-column
+                       d-none
+                       d-sm-table-cell">
+            </th>
+            <th scope="col"
+                class="modified-column
+                       d-none
+                       d-sm-table-cell">
+            </th>
+            <th scope="col"
+                class="delete-column">
+            </th>
         </tr>
         </thead>
-
         <tbody class="shadow-sm">
         <tr>
             <td>
@@ -124,7 +168,13 @@ Trying to make gray nav as a table
             </td>
             <td class="d-none d-sm-table-cell">Drew VDP</td>
             <td class="d-none d-sm-table-cell">December 9, 2020</td>
-            <td><i class="fas fa-trash"></i></td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-trash">
+
+                    </i>
+                </a>
+            </td>
         </tr>
         <tr>
             <td>
@@ -135,23 +185,33 @@ Trying to make gray nav as a table
             </td>
             <td class="d-none d-sm-table-cell">Rob Platt</td>
             <td class="d-none d-sm-table-cell">December 18, 2020</td>
-            <td><i class="fas fa-trash"></i></td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
 
     <table class="table">
-
-        <!-- intentionally leaving the header hidden so columns are a fixed width -->
+        <!-- Treating the header as just a title - leaving column names blank -->
         <thead>
         <tr>
             <th class="title-column">Last 7 Days</th>
-            <th class="owned-column d-none d-sm-table-cell"></th>
-            <th class="modified-column d-none d-sm-table-cell"></th>
+            <th class="owned-column
+                       d-none
+                       d-sm-table-cell">
+            </th>
+            <th class="modified-column
+                       d-none
+                       d-sm-table-cell">
+            </th>
             <th class="delete-column"></th>
         </tr>
         </thead>
 
+        <!-- Filling table with more of my old classes -->
         <tbody class="shadow-sm">
         <tr>
             <td>
@@ -160,9 +220,19 @@ Trying to make gray nav as a table
                 </a>
                 CS5001 Foundations of Computer Science
             </td>
-            <td class="d-none d-sm-table-cell">Laney Strange</td>
-            <td class="d-none d-sm-table-cell">April 15, 2020</td>
-            <td><i class="fas fa-trash"></i></td>
+            <td class="d-none
+                       d-sm-table-cell">
+                Laney Strange
+            </td>
+            <td class="d-none
+                       d-sm-table-cell">
+                April 15, 2020
+            </td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
         </tr>
         <tr>
             <td>
@@ -171,9 +241,19 @@ Trying to make gray nav as a table
                 </a>
                 CS5002 Discrete and Data Structures
             </td>
-            <td class="d-none d-sm-table-cell">Ghita Amor</td>
-            <td class="d-none d-sm-table-cell">April 20, 2020</td>
-            <td><i class="fas fa-trash"></i></td>
+            <td class="d-none
+                       d-sm-table-cell">
+                Ghita Amor
+            </td>
+            <td class="d-none
+                       d-sm-table-cell">
+                April 20, 2020
+            </td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
         </tr>
         <tr>
             <td>
@@ -182,9 +262,19 @@ Trying to make gray nav as a table
                 </a>
                 CS5004 Object-Oriented Design
             </td>
-            <td class="d-none d-sm-table-cell">Vidoje</td>
-            <td class="d-none d-sm-table-cell">August 20, 2020</td>
-            <td><i class="fas fa-trash"></i></td>
+            <td class="d-none
+                       d-sm-table-cell">
+                Vidoje
+            </td>
+            <td class="d-none
+                       d-sm-table-cell">
+                August 20, 2020
+            </td>
+            <td>
+                <a href="#">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>

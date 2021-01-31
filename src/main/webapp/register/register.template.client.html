@@ -11,28 +11,35 @@
     <div class="container">
         <h1>Sign Up</h1>
         <form>
+            <!-- Creat the username field -->
             <div class="form-group row">
-                <label for="usernameFld" class="col-sm-2 col-form-label">
+                <label for="usernameFld"
+                       class="col-sm-2 col-form-label">
                     Username
                 </label>
                 <div class="col-sm-10">
-                    <input class="form-control wbdv-field wbdv-username"
+                    <input class="form-control"
                            id="usernameFld"
                            placeholder="Alice"/>
                 </div>
             </div>
 
+            <!-- Create the password field - ensure text in this field is hidden -->
             <div class="form-group row">
-                <label for="passwordFld" class="col-sm-2 col-form-label">
-                    Password</label>
+                <label for="passwordFld"
+                       class="col-sm-2
+                       col-form-label">
+                    Password
+                </label>
                 <div class="col-sm-10">
                     <input type="password"
-                           class="form-control wbdv-field wbdv-password"
+                           class="form-control"
                            id="passwordFld"
                            placeholder="123qwe#$%"/>
                 </div>
             </div>
 
+            <!-- Create the verify password field - same as password field -->
             <div class="form-group row">
                 <label for="verifyPasswordFld" class="col-sm-2 col-form-label">
                     Verify Password</label>
@@ -44,18 +51,24 @@
                 </div>
             </div>
 
+            <!-- Create the register button -->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label"></label>
                 <div class="col-sm-10">
                     <button class="btn btn-primary btn-block wbdv-login" id="registerBtn">
                         Register
                     </button>
+                    <!-- Login and Cancel options placed directly under the button -->
+                    <!-- Keep in same div so they are in the same line -->
                     <div class="row">
                         <div class="col">
                             <a href="../login/login.template.client.html">Login</a>
                         </div>
                         <div class="col">
-                            <a href="../index.html" class="float-right">Cancel</a>
+                            <a href="../index.html"
+                               class="float-right">
+                                Cancel
+                            </a>
                         </div>
                     </div>
                 </div>
