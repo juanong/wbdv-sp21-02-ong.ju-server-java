@@ -10,138 +10,190 @@
 </head>
 <body>
 
+<!-- Make the header with a single row-->
 <div class="row bg-secondary jo-editor-header-padding shadow">
     <div class="col-sm-4">
         <ul class="list-inline">
-            <li class="list-inline-item jo-x-right-padding jo-color-light-gray"><i class="fas fa-times fa-lg"></i></li>
-            <li class="list-inline-item jo-color-white"><h5>CS5610 - WebDev</h5></li>
+            <li class="list-inline-item
+                       jo-x-right-padding
+                       jo-color-light-gray">
+                <a href="../index.html">
+                    <!-- X icon leads back to home page-->
+                <i class="fas fa-times fa-lg"></i>
+                </a>
+            </li>
+            <li class="list-inline-item
+                       jo-color-white">
+                <!-- Static title of the course -->
+                <a href="#"><h5>CS5610 - WebDev</h5></a>
+            </li>
         </ul>
     </div>
+
+    <!-- The rest of the row is for the 'tabs' -->
     <div class="col-sm-8">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="jo-color-light-gray" href="../index.html"><h5>Build</h5></a>
+                <a class="jo-color-light-gray" href="#">
+                    <h5>Build</h5>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="jo-color-light-gray"><h5>Pages</h5></a>
+                <a class="jo-color-light-gray" href="#">
+                    <h5>Pages</h5>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="jo-color-light-gray"><h5>Theme</h5></a>
+                <a class="jo-color-light-gray" href="#">
+                    <h5>Theme</h5>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="jo-color-light-gray"><h5>Store</h5></a>
+                <a class="jo-color-light-gray" href="#">
+                    <h5>Store</h5>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="jo-color-light-gray"><h5>App</h5></a>
+                <a class="jo-color-light-gray" href="#">
+                    <h5>App</h5>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="jo-color-light-gray"><h5>Settings</h5></a>
+                <a class="jo-color-light-gray" href="#">
+                    <h5>Settings</h5>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="jo-color-white"><i class="fas fa-plus"></i></a>
+                <a class="jo-color-white" href="#">
+                    <i class="fas fa-plus"></i>
+                </a>
             </li>
         </ul>
     </div>
 </div>
 
+<!-- New section - includes the left hand panel and the inner pills -->
 <div class="row">
+    <!-- A third of the row will be for the panel -->
     <div class="col-sm-4 bg-dark">
         <br>
+        <!-- First button -->
         <div class="jo-left-panel-padding">
             <div class="container text-center">
-                <button type="button"
-                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                <a class="btn btn-secondary
+                          btn-block
+                          jo-left-panel-padding" href="#">
                     Module 1 - jQuery
                     <i class="fas fa-times float-right"></i>
-                </button>
+                </a>
             </div>
         </div>
+        <!-- Second button -->
         <div class="jo-left-panel-padding">
             <div class="container text-right">
-                <button type="button"
-                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                <a class="btn btn-secondary
+                          btn-block
+                          jo-left-panel-padding" href="#">
                     Module 2 - React
                     <i class="fas fa-times float-right"></i>
-                </button>
+                </a>
             </div>
         </div>
+        <!-- Third button -->
         <div class="jo-left-panel-padding">
             <div class="container text-right">
-                <button type="button"
-                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                <a class="btn btn-secondary
+                          btn-block
+                          jo-left-panel-padding" href="#">
                     Module 3 - Redux
                     <i class="fas fa-times float-right"></i>
-                </button>
+                </a>
             </div>
         </div>
+        <!-- Fourth button -->
         <div class="jo-left-panel-padding">
             <div class="container text-right">
-                <button type="button"
-                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                <a class="btn btn-secondary
+                          btn-block
+                          jo-left-panel-padding" href="#">
                     Module 4 - Native
                     <i class="fas fa-times float-right"></i>
-                </button>
+                </a>
             </div>
         </div>
+        <!-- Fifth button -->
         <div class="jo-left-panel-padding">
             <div class="container text-right">
-                <button type="button"
-                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                <a class="btn btn-secondary
+                          btn-block
+                          jo-left-panel-padding" href="#">
                     Module 5 - Angular
                     <i class="fas fa-times float-right"></i>
-                </button>
+                </a>
             </div>
         </div>
+        <!-- Sixth button -->
         <div class="jo-left-panel-padding">
             <div class="container text-right">
-                <button type="button"
-                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                <a class="btn btn-secondary
+                          btn-block
+                          jo-left-panel-padding" href="#">
                     Module 6 - Node
                     <i class="fas fa-times float-right"></i>
-                </button>
+                </a>
             </div>
         </div>
+        <!-- Last button -->
         <div class="jo-left-panel-padding">
             <div class="container text-right">
-                <button type="button"
-                        class="btn btn-secondary btn-block jo-left-panel-padding">
+                <a class="btn btn-secondary
+                          btn-block
+                          jo-left-panel-padding" href="#">
                     Module 7 - Mongo
                     <i class="fas fa-times float-right"></i>
-                </button>
+                </a>
             </div>
         </div>
+        <!-- Throw in button to add buttons later on -->
         <div class="jo-color-white jo-left-panel-padding">
             <a href="#"><i class="fas fa-plus float-right fa-lg"></i></a>
             <br>
             <br>
         </div>
     </div>
+    <!-- Final section - just the pills under the header bar -->
     <div class="col-sm-8">
         <div class="container">
             <div class="row">
                 <div class="jo-topics-spacing">
-                    <div class="background-gray jo-topics-format">
-                        <h5>Topic 1</h5>
+                    <div class="background-gray
+                                jo-topics-format">
+                        <!-- Link each pill to nothing for the time being -->
+                        <a href="#"><h5>Topic 1</h5></a>
                     </div>
                 </div>
                 <div class="jo-topics-spacing">
-                    <div class="background-gray jo-topics-format">
-                        <h5>Topic 2</h5>
+                    <div class="background-gray
+                                jo-topics-format">
+                        <a href="#"><h5>Topic 2</h5></a>
                     </div>
                 </div>
                 <div class="jo-topics-spacing">
-                    <div class="background-gray jo-topics-format">
-                        <h5>Topic 3</h5>
+                    <div class="background-gray
+                                jo-topics-format">
+                        <a href="#"><h5>Topic 3</h5></a>
                     </div>
                 </div>
                 <div class="jo-topics-spacing">
-                    <div class="background-gray jo-topics-format">
+                    <div class="background-gray
+                                jo-topics-format">
                         <a href="#"><h5>Topic 4</h5></a>
                     </div>
                 </div>
                 <div class="jo-topics-spacing">
-                    <div class="background-gray jo-topics-plus-format">
-                        <h5><i class="fas fa-plus"></i></h5>
+                    <div class="background-gray
+                                jo-topics-plus-format">
+                        <a href="#"><h5><i class="fas fa-plus"></i></h5></a>
                     </div>
                 </div>
             </div>

@@ -25,11 +25,6 @@ i {
     padding-bottom: 15px;
 }
 
-/* Hyperlinks on this page shouldn't change color */
-a {
-    color: inherit;
-}
-
 /* File icons are light blue */
 .fa-file-alt {
     color:dodgerblue;

@@ -49,3 +49,8 @@
 .jo-color-light-gray {
     color: lightgray;
 }
+
+/* Hyperlinks shouldn't change color */
+a {
+    color: inherit;
+}
