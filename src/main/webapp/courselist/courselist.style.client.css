@@ -2,6 +2,7 @@ i {
     margin-right: 10px;
 }
 
+/* Fixed size of columns for every table */
 .title-column {
     width: 50%;
 }
@@ -18,7 +19,24 @@ i {
     width: 15%;
 }
 
+/* The element directly below the nav bar will need to be pushed down */
 .below-nav {
     padding-top: 55px;
     padding-bottom: 15px;
+}
+
+/* Hyperlinks on this page shouldn't change color */
+a {
+    color: inherit;
+}
+
+/* File icons are light blue */
+.fa-file-alt {
+    color:dodgerblue;
+}
+
+/* Size and weight of font specific to Course Manager title */
+.course-manager-font {
+    font-weight: bold;
+    font-size: 20px;
 }
