@@ -8,6 +8,7 @@
     color: white;
 }
 
+/* This is for a page header that is always visible on the screen */
 .jo-sticky-nav-bar {
     background-color: royalblue;
     padding: 10px;

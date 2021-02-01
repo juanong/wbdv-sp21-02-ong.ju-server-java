@@ -7,16 +7,19 @@
 </head>
 <body>
     <div class="container">
+        <!-- Two static notifications -->
         <h1 class="color-blue">Profile</h1>
         <div class="alert alert-success"
              role="alert">
-            A simple success alert—check it out!
+            Success!
         </div>
         <div class="alert alert-danger"
              role="alert">
-            A simple danger alert—check it out!
+            Oh no - something went wrong!
         </div>
+        <!-- All of the input fields will include a label for a better user experience -->
         <form>
+            <!-- Username -->
             <div class="form-group row">
                 <label for="usernameFld"
                        class="col-sm-2 col-form-label">
@@ -29,7 +32,7 @@
                            placeholder="Alice"/>
                 </div>
             </div>
-
+            <!-- Phone number -->
             <div class="form-group row">
                 <label for="phoneFld"
                        class="col-sm-2 col-form-label">
@@ -42,7 +45,7 @@
                            placeholder="(123) 456-7890"/>
                 </div>
             </div>
-
+            <!-- Email - using the email input type so the user gets the correct keyboard on mobile -->
             <div class="form-group row">
                 <label for="emailFld"
                        class="col-sm-2 col-form-label">
@@ -55,7 +58,7 @@
                            placeholder="alice@wonderland.com"/>
                 </div>
             </div>
-
+            <!-- Drop down menu -->
             <div class="form-group row">
                 <label for="roleFld"
                        class="col-sm-2 col-form-label">
@@ -69,18 +72,24 @@
                     </select>
                 </div>
             </div>
-
+            <!-- Date of birth - this will use a date picker -->
             <div class="form-group row">
-                <label for="dobFld" class="col-sm-2 col-form-label">Date of Birth</label>
+                <label for="dobFld"
+                       class="col-sm-2 col-form-label">
+                    Date of Birth
+                </label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="date" id="dobFld"/>
+                    <input class="form-control"
+                           type="date"
+                           id="dobFld"/>
                 </div>
             </div>
-
+            <!-- Two static buttons that currently lead to other pages of the app -->
             <div class="form-group row">
                 <label class="col-sm-2"></label>
                 <div class="col-sm-10">
-                    <a class="btn btn-success btn-block" href="profile.template.client.html">
+                    <a class="btn btn-success btn-block"
+                       href="profile.template.client.html">
                         Update
                     </a>
                 </div>
@@ -89,7 +98,8 @@
             <div class="form-group row">
                 <label class="col-sm-2"></label>
                 <div class="col-sm-10">
-                    <a class="btn btn-danger btn-block" href="../login/login.template.client.html">
+                    <a class="btn btn-danger btn-block"
+                       href="../login/login.template.client.html">
                         Logout
                     </a>
                 </div>
