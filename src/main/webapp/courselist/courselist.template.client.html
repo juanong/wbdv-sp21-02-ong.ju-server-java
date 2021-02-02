@@ -7,19 +7,21 @@
     <link href="../styles.css" rel="stylesheet"/>
     <link href="./courselist.style.client.css" rel="stylesheet"/>
     <title>Course List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
 <!-- This nav bar will stay present on the screen as the user scrolls down -->
 <div class="row jo-sticky-nav-bar">
-    <div class="col-sm-2 d-none d-sm-block">
+    <div class="col-sm-2 course-manager">
         <!-- Put the icon and Course Manager title in the same line -->
         <a href="#">
         <i class="fas fa-bars"></i>
         <span class="course-manager-font">Course Manager</span>
         </a>
     </div>
-    <!-- Only the icon will appear in the nav bar on extra small screens -->
+
+    <!-- Search bar -->
     <div class="col-7">
         <input type="text"
                class="form-control"

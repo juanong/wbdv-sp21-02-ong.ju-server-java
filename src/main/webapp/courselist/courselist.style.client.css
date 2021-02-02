@@ -2,6 +2,10 @@ i {
     margin-right: 10px;
 }
 
+.course-manager {
+    padding-left: 25px;
+}
+
 /* Fixed size of columns for every table */
 .title-column {
     width: 50%;
@@ -34,4 +38,21 @@ i {
 .course-manager-font {
     font-weight: bold;
     font-size: 20px;
+}
+
+/* The Owned and Modified columns need to collapse on mobile devices*/
+@media (max-width: 576px) {
+    .owned-column {
+        display: none;
+    }
+    .modified-column {
+        display: none;
+    }
+}
+
+/* The title at the top-left corner needs to collapse otherwise it will wrap */
+@media (max-width: 900px) {
+    .course-manager {
+        display: none;
+    }
 }
