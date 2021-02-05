@@ -12,7 +12,6 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous"></script>
     <script src="../services/user.service.client.js"></script>
-    <script src="user-admin.controller.client.js"></script>
 
 </head>
 <body>
@@ -28,57 +27,43 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Role</th>
-            <th></th>
+            <th>&nbsp;</th>
         </tr>
-        <tr>
-            <th><input class="form-control"
+        <tr class="wbdv-form">
+            <td><input class="form-control"
                        id="usernameFld"
                        placeholder="Username"/>
-            </th>
-            <th><input class="form-control"
+            </td>
+            <td><input class="form-control"
                        type="password"
                        id="passwordFld"
                        placeholder="Password"/>
-            </th>
-            <th><input class="form-control"
+            </td>
+            <td><input class="form-control"
                        id="firstNameFld"
                        placeholder="First Name"/>
-            </th>
-            <th><input class="form-control"
+            </td>
+            <td><input class="form-control"
                        id="lastNameFld"
                        placeholder="Last Name"/>
-            </th>
-            <th>
-                <select class="form-control" id="roldFld">
-                    <option>Faculty</option>
-                    <option>Student</option>
-                    <option>Admin</option>
+            </td>
+            <td>
+                <select class="form-control" id="roleFld">
+                    <option value="FACULTY">Faculty</option>
+                    <option value="STUDENT">Student</option>
+                    <option value="ADMIN">Admin</option>
                 </select>
-            </th>
-            <th><span class="pull-right" style="white-space: nowrap">
-                <i class="fa-2x fa fa-plus wbdv-create"></i>
-                <i class="fa-2x fa fa-check wbdv-update"></i>
-            </span>
-            </th>
+            </td>
+            <td><span class="pull-right" style="white-space: nowrap">
+                    <i class="fa-2x fa fa-plus wbdv-create"></i>
+                    <i class="fa-2x fa fa-check wbdv-update"></i>
+                </span>
+            </td>
         </tr>
         </thead>
-        <tbody class="wbdv-tbody">
-            <tr class="wbdv-template wbdv-user wbdv-hidden">
-                <td class="wbdv-username">ada</td>
-                <td>&nbsp;</td>
-                <td class="wbdv-first-name">Ada</td>
-                <td class="wbdv-last-name">Lovelace</td>
-                <td class="wbdv-role">FACULTY</td>
-                <td class="wbdv-actions">
-            <span class="pull-right">
-              <i class="fa-2x fa fa-times wbdv-remove"></i>
-              <i class="fa-2x fa fa-pencil wbdv-edit"></i>
-            </span>
-                </td>
-            </tr>
-        </tbody>
+        <tbody class="wbdv-tbody"></tbody>
     </table>
 </div>
-
+<script src="user-admin.controller.client.js"></script>
 </body>
 </html>
