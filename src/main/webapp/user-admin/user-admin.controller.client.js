@@ -5,24 +5,44 @@
     var $userRowTemplate, $tbody;
     var userService = new AdminUserServiceClient();
     /* Use an array to store users */
-    var users = [
-        {username: "juanong", password: "none", firstName: "Juan", lastName: "Ong", role: "STUDENT"},
-        {username: "mjcho", password: "secret", firstName: "Min Je", lastName: "Cho", role: "ADMIN"}
-    ]
+    var users
 
     function createUser(user) {
-        users.push(user)
-        renderUsers(users)
+        userService.createUser(user)
+            .then(function (actualUser) {
+                users.push(actualUser)
+                renderUsers(users)
+            })
     }
 
     // Delete a user from the table body - helper function used in renderUsers
     function deleteUser(event) {
         $removeBtn = jQuery(event.target)
-        var removeBtnID = $removeBtn.attr("id")
-        users.splice(removeBtnID, 1)
+        var removeBtnIndex = $removeBtn.attr("id")
+        var removeBtnID = users[removeBtnIndex]._id
+
+        // As usual, calling our service functions returns a promise that needs to be followed through
+        // In this case, we don't actual need what the server returns
+        userService.deleteUser(removeBtnID)
+            .then(function() {})
+
+        // Once the server has removed the user, we now remove it from our local array
+        users.splice(removeBtnIndex, 1)
         renderUsers(users)
     }
-    function selectUser() {
+
+    function selectUser(event) {
+        $editBtn = jQuery(event.target)
+        // ID for the select button is the actual id of the user object, not the array index position
+        var editBtnID = $editBtn.attr("id")
+        // Find the user in the local array with the same ID as target ID
+        var selectedUser = users.find(user => user.id === editBtnID)
+        // Update input fields
+        $usernameFld.val(selectedUser.username)
+        $passwordFld.val(selectedUser.password)
+        $firstNameFld.val(selectedUser.firstName)
+        $lastNameFld.val(selectedUser.lastName)
+        $roleFld.val(selectedUser.role)
 
     }
     function updateUser() {
@@ -43,7 +63,7 @@
                 <td class="wbdv-actions">
                 <span class="pull-right">
                   <i class="fa-2x fa fa-times wbdv-remove" id="${i}"></i>
-                  <i class="fa-2x fa fa-pencil wbdv-edit" id="${i}"></i>
+                  <i class="fa-2x fa fa-pencil wbdv-edit" id="${course._id}"></i>
                 </span>
                 </td>
             </tr>
@@ -53,6 +73,10 @@
         jQuery(".wbdv-remove")
             // Get the event target to access id
             .click(deleteUser)
+
+        /* Have the select buttons waiting in case we want to edit a user */
+        jQuery(".wbdv-edit")
+            .click(selectUser)
     }
 
     function emptyInputFields() {
@@ -76,10 +100,12 @@
         $firstNameFld = $("#firstNameFld")
         $lastNameFld = $("#lastNameFld")
         $roleFld = $("#roleFld")
-
         $createBtn = $(".wbdv-create")
         $tbody = $(".wbdv-tbody")
 
+        users = []
+
+        // Have the create button listen to create new users based on input field values
         $createBtn.click(()=> {
             var newUser = {
                 username: $usernameFld.val(),
@@ -92,8 +118,13 @@
             // Clear the input fields with helper function
             emptyInputFields()
         })
-
-        renderUsers(users)
+        // Fetch the users from the server
+        userService.findAllUsers()
+            // The server will return to us the objects it has
+            .then(function (actualUsers) {
+                users = actualUsers
+                renderUsers(users)
+            })
     }
 
     $(main);
