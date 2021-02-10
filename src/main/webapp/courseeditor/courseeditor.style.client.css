@@ -19,17 +19,20 @@
     padding-bottom: 1px;
     padding-left: 25px;
     padding-right: 25px;
+    margin: 20px;
 }
 
+/*
 .jo-topics-spacing {
     padding-top:20px;
     padding-left:10px;
     padding-right:10px;
 }
-
+*/
 .jo-topics-plus-format {
     padding-top:6px;
     padding-bottom:1px;
     padding-left:10px;
     padding-right:10px;
+    margin:20px;
 }
