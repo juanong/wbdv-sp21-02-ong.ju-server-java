@@ -4,13 +4,19 @@
     var $removeBtn, $editBtn, $createBtn, $updateBtn;
     var $userRowTemplate, $tbody;
     var userService = new AdminUserServiceClient();
-    /* Use a local array to store users */
+    // Use a local array to store users
+    /*
+    Remember that this local array only stores the JSON objects returned by the server.
+    Therefore, they will have fields such as id that we can access
+     */
     var users
 
     function createUser(user) {
+        // Give the user to the service client
         userService.createUser(user)
-            // We need to use .then() the access what the server returns
+            // .then() means we only execute this AFTER the server succeeds
             .then(function (actualUser) {
+                // Push the user onto the local array and rerender the page
                 users.push(actualUser)
                 renderUsers(users)
             })
@@ -18,6 +24,7 @@
 
     // Delete a user from the table body - helper function used in renderUsers
     function deleteUser(event) {
+        // The event target stores the actual attributes of the user
         $removeBtn = jQuery(event.target)
         var removeBtnIndex = $removeBtn.attr("id")
         // Grab the actual ID attribute of the user we want to delete
@@ -34,6 +41,7 @@
     // Instantiate the selected user so we can update them
     var selectedUser = null
     function selectUser(event) {
+        // The event target stores the actual attributes of the user
         $editBtn = jQuery(event.target)
         // ID for the select button is the actual id of the user object, not the array index position
         var editBtnID = $editBtn.attr("id")
@@ -46,24 +54,25 @@
         $firstNameFld.val(selectedUser.firstName)
         $lastNameFld.val(selectedUser.lastName)
         $roleFld.val(selectedUser.role)
-
     }
 
-    // Replace the values of a user with the new input field values
+    // Replace the values of a user with the new input field values. The update button is always listening
     function updateUser() {
         console.log(selectedUser)
-        // Replace all the values
+        // Replace all the values of the LOCAL user object
         selectedUser.username = $usernameFld.val()
         selectedUser.password = $passwordFld.val()
         selectedUser.firstName = $firstNameFld.val()
         selectedUser.lastName = $lastNameFld.val()
         selectedUser.role = $roleFld.val()
 
+        // Pass the UPDATED USER to the service
         userService.updateUser(selectedUser._id, selectedUser)
             // Once the server returns us the object, we can add update the user locally and re-render
             .then(function(status) {
                 // Now that the server has responded, we can update the local array
                 var updatedUserIndex = users.findIndex(user => user._id === selectedUser._id)
+                // Replace the user with its new info in the local array
                 users[updatedUserIndex] = selectedUser
                 renderUsers(users)
                 emptyInputFields()
@@ -87,14 +96,16 @@
                 <td class="wbdv-role">${user.role}</td>
                 <td class="wbdv-actions">
                 <span class="pull-right">
-                  <i class="fa-2x fa fa-times wbdv-remove" id="${i}"></i>
+                  <i class="fa-2x fa fa-times wbdv-remove" id="${i}"></i> 
+                  <!-- IMPORTANT: we assign the ID the edit icon to be the ID of the USER -->
                   <i class="fa-2x fa fa-pencil wbdv-edit" id="${user._id}"></i>
                 </span>
                 </td>
             </tr>
             `)
         }
-        /* Delete user functionality. This listens specifically for the wbdv-remove class and uses the id */
+        // Every time we click a button, we're passing along an event to the function inside
+        // Delete user functionality. This listens specifically for the wbdv-remove class and uses the id
         jQuery(".wbdv-remove")
             // Get the event target to access id
             .click(deleteUser)
@@ -128,6 +139,7 @@
         users = []
 
         // Have the create button listening to create new users based on input field values
+        // .click has to be given a FUNCTION as its parameter
         $createBtn.click(()=> {
             var newUser = {
                 username: $usernameFld.val(),
@@ -136,6 +148,7 @@
                 lastName: $lastNameFld.val(),
                 role: $roleFld.val()
             }
+            // Pass the new user along to the createUser function
             createUser(newUser)
             // Clear the input fields with helper function
             emptyInputFields()
@@ -148,6 +161,7 @@
         userService.findAllUsers()
             // The server will return to us the objects it has
             .then(function (actualUsers) {
+                // The local users array becomes identical to the array of the server
                 users = actualUsers
                 renderUsers(users)
             })

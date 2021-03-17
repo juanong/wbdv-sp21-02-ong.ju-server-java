@@ -4,6 +4,7 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
+    // The server is what actually interacts with the database
     this.url = 'https://wbdv-generic-server.herokuapp.com/api/001733643/users';
     var self = this;
 
@@ -12,12 +13,13 @@ function AdminUserServiceClient() {
         return fetch(self.url, {
             // We are posting a new user to the server
             method: 'POST',
-            // Tell the server what kind of data we're sending
+            // Headers tell the server what kind of data we're sending
             headers: {
                 'content-type': 'application/json'
             },
-            // Provide the server with a string version of our new object
+            // Provide the server with a string version of the actual user object
             body: JSON.stringify(user)
+            // Once the user is posted into the database, we return its response to the controller
         }).then(function (response) {
             return response.json()
         })
@@ -35,10 +37,11 @@ function AdminUserServiceClient() {
     function findUserById(userId) {}
 
     function updateUser(userId, user) {
+        // The PUT method takes in the userID in the server URL. It will replace that.
         return fetch(`${self.url}/${userId}`, {
             method: 'PUT',
             headers : {'content-type': 'application/json'},
-            // Provide the actual user to the server as a string
+            // Provide the actual user to the server as a string. We put this user in the given user's place
             body: JSON.stringify(user)
         })  // Once the server responds, we return the JSON version of our updated user to our controller
             .then(response => response.json())
