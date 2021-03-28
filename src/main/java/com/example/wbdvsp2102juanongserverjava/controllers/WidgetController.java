@@ -1,11 +1,9 @@
 package com.example.wbdvsp2102juanongserverjava.controllers;
-
 import com.example.wbdvsp2102juanongserverjava.models.Widget;
 import com.example.wbdvsp2102juanongserverjava.services.WidgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 // Annotate as a REST controller, which lets all the content within this class available through HTTP requests
@@ -31,7 +29,7 @@ public class WidgetController {
     }
 
     @GetMapping("/api/widgets/wid")
-    public Widget findWidgetById(Long wid) {
+    public Widget findWidgetById(Integer wid) {
         return service.findWidgetById(wid);
     }
 
@@ -41,19 +39,21 @@ public class WidgetController {
             // The widget to add is going to be given to us from the fetch
             @RequestBody Widget widget)
     {
+        System.out.println(tid);
+        widget.setTopicId(tid);
         return service.createWidget(tid, widget);
     }
 
     @DeleteMapping("api/widgets/{wid}")
     public Integer deleteWidget(
-            @PathVariable("wid") Long wid)
+            @PathVariable("wid") int wid)
     {
                 return service.deleteWidget(wid);
     }
 
     @PutMapping("api/widgets/{wid}")
     public Integer updateWidget(
-            @PathVariable("wid") Long wid,
+            @PathVariable("wid") int wid,
             @RequestBody Widget widget)
     {
         return service.updateWidget(wid, widget);
