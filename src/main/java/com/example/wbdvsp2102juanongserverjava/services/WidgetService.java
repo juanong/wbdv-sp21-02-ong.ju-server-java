@@ -19,20 +19,7 @@ public class WidgetService {
     WidgetRepository repository;
 
     private List<Widget> widgets = new ArrayList<Widget>();
-    {
-/*        Widget w1 = new Widget( 123L, "ABC123", "HEADING", 1, "Widgets for Topic ABC123");
-        Widget w2 = new Widget( 234L, "ABC123", "PARAGRAPH", 1, "Lorem Ipsum");
-        Widget w3 = new Widget( 345L, "ABC234", "HEADING", 1, "Widgets for Topic ABC234");
-        Widget w4 = new Widget( 456L, "ABC234", "PARAGRAPH", 1, "Lorem Ipsum");
-        Widget w5 = new Widget( 567L, "ABC234", "PARAGRAPH", 1, "Lorem Ipsum");
 
-        // Add to our list of widgets
-        widgets.add(w1);
-        widgets.add(w2);
-        widgets.add(w3);
-        widgets.add(w4);
-        widgets.add(w5);*/
-    }
     /*
     IMPLEMENT ALL CRUD OPERATIONS
      */
@@ -48,22 +35,13 @@ public class WidgetService {
 
        return repository.findWidgetsForTopic(topicId);
 
-        /*List<Widget> widgetsForTopic = new ArrayList<Widget>();
-        for (Widget widget: widgets) {
-            if (widget.getTopicId().equals(topicId)) {
-                widgetsForTopic.add(widget);
-            }
-        }
-        return widgetsForTopic;*/
     }
 
     public Widget findWidgetById(Integer wid) throws IllegalArgumentException {
-        for (Widget widget: widgets) {
-            if (widget.getId() == wid) {
-                return widget;
-            }
+        if (repository.findById(wid).isPresent()) {
+            return repository.findById(wid).get();
         }
-        throw new IllegalArgumentException("Cannot find widget with given ID");
+        throw new IllegalArgumentException("Could not find widget with given ID");
     }
 
     public Widget createWidget(String tid, Widget widget) {
@@ -74,15 +52,6 @@ public class WidgetService {
     public Integer deleteWidget(Integer wid) throws IllegalArgumentException {
         repository.deleteById(wid);
         return 1;
-/*        int index = -1;
-        for (int i=0; i<widgets.size(); i++) {
-            if(widgets.get(i).getId().equals(wid)) {
-                index = i;
-                widgets.remove(index);
-                return 1;
-            }
-        }
-        return 0;*/
     }
 
     public Integer updateWidget(int wid, Widget widget) {
@@ -136,19 +105,13 @@ public class WidgetService {
             originalWidget.setStyle(widget.getStyle());
         }
 
+        if (widget.getOrdered() != null) {
+            originalWidget.setOrdered(widget.getOrdered());
+        }
+
         repository.save(originalWidget);
 
         return 1;
-
-/*        int index = -1;
-        for (int i=0; i<widgets.size(); i++) {
-            if(widgets.get(i).getId().equals(wid)) {
-                index = i;
-                widgets.set(index, widget);
-                return 1;
-            }
-        }
-        return 0;*/
     }
 
 }

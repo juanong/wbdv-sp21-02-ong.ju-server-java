@@ -25,8 +25,9 @@ public class Widget {
     private String style;
     private String value;
     private String src;
+    private Boolean ordered;
 
-    // Constructor with optional name parameter
+// Constructor with optional name parameter
 /*    public Widget(String name, Integer id, String topicId, String type, Integer size, String text) {
         this.name = name;
         this.id = id;
@@ -58,7 +59,6 @@ public class Widget {
 
     public void setName(String name) {this.name = name;}
 
-    @Id
     public int getId() {
         return id;
     }
@@ -126,5 +126,13 @@ public class Widget {
     public String getValue() {return value;}
 
     public void setValue(String value) {this.value = value;}
+
+    public Boolean getOrdered() {
+        return ordered;
+    }
+
+    public void setOrdered(Boolean ordered) {
+        this.ordered = ordered;
+    }
 
 }
